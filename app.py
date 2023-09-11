@@ -24,6 +24,7 @@ def get_message():
     """Returns JSON for a random Psuedochat message."""
 
     data = {
+        "id": Message.get_random_message().id,
         "message": Message.get_random_message().message
     }
 
