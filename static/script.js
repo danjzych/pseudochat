@@ -66,17 +66,10 @@ function handleChatSubmit(evt) {
     $MESSAGE_FIELD.append(`<p class="message user">${userMessage}</p>`);
     $MESSAGE_FIELD.append(`<p class="user-signature"><span class='user-name'>User</span>, ${getDateAndTime()}</p>`);
 
-    //always scroll to bottom
-    $MESSAGE_FIELD.scrollTop($('#message-field')[0].scrollHeight);
+	userMessage.toLowerCase() === 'clear' ? clearMessages() : getMessage();
 
-    $INPUT.val('Send another message!');
-
-
-	if (userMessage.toLowerCase() === 'clear') {
-		clearMessages();
-	} else {
-		getMessage();
-	}
+	//Scroll to bottom of chat to put new messages in view
+	$MESSAGE_FIELD.scrollTop($MESSAGE_FIELD[0].scrollHeight);
 
 	$INPUT.val('');
 	$INPUT.attr('placeholder', 'Send another message!');
