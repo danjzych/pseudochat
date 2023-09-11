@@ -50,7 +50,7 @@ header h1.logo {
     font-size: 3.5rem;
     background: -webkit-linear-gradient(aquamarine, rgb(30, 43, 160));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     cursor: pointer;
 }
 
@@ -117,11 +117,11 @@ main {
 } .user-name {
     background: -webkit-linear-gradient(deeppink, tan);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
 } .bot-name {
     background: -webkit-linear-gradient(aquamarine, rgb(30, 43, 160));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
 }
 
 input {
