@@ -1,0 +1,142 @@
+/*global styles*/
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+
+@font-face {
+    font-family: Averta;
+    src: url('./resources/AvertaDemoPE-Regular.ttf')
+}
+
+@font-face {
+    font-family: 'Averta Bold';
+    src: url('./resources/AvertaDemoPE-ExtraboldItalic.ttf')
+}
+
+html {
+    font-size: 16px;
+    background-image: linear-gradient(to right, pink, tan);
+    color: white;
+    text-align: center;
+    font-family: 'Averta', monospace;
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    position:-webkit-sticky;
+    opacity: 1.0;
+    z-index: 2;
+}
+
+header h1.logo {
+    display: inline-flex;
+    flex-direction: row;
+    font-family: 'Averta Bold';
+    font-size: 3.5rem;
+    background: -webkit-linear-gradient(aquamarine, rgb(30, 43, 160));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    cursor: pointer;
+}
+
+.about-container {
+    margin-bottom: 2rem;
+} h2 {
+    font-family: 'Averta Bold';
+    background: -webkit-linear-gradient(aquamarine, rgb(30, 43, 160));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+main {
+    width: 100%;
+    height: 100%;
+    }
+
+    /*chat styles*/
+
+.chat-container {
+    overflow: scroll;
+    border: 4px rgb(30, 43, 160) solid;
+    border-radius: 13px;
+    margin: 0 10rem;
+    color: black;
+    background-color: aliceblue;
+} .chat-header p {
+    text-align: left;
+    background-color: white;
+    padding: 1rem 1rem 0.5rem 1rem;
+    border-bottom: 2px rgb(30, 43, 160) dotted;
+    margin-bottom: .1rem;
+} .message-field {
+    padding: 1rem 1rem 1rem 2rem;
+    height: 30rem;
+    overflow-y: auto;
+    display: grid;
+	align-self: end;
+	grid-auto-rows: minmax(min-content, max-content);
+} .message {
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 1rem 1rem 1rem 0rem;
+    width: 35%;
+    color: white;
+} .user {
+    text-align: right;
+    background-color:deeppink;
+    justify-self: right;
+} .bot {
+    text-align: left;
+    background-color: rgb(30, 43, 160);
+} .user-signature {
+    color: grey;
+    font-size: .75rem;
+    margin-bottom: 0;
+    text-align: right;
+} .bot-signature {
+    color: grey;
+    font-size: .75rem;
+    margin-bottom: 0;
+    text-align: left;
+} .user-name {
+    background: -webkit-linear-gradient(deeppink, tan);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+} .bot-name {
+    background: -webkit-linear-gradient(aquamarine, rgb(30, 43, 160));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+input {
+    padding: .5rem;
+    margin-top: 0rem;
+    text-align: center;
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: 2px rgb(30, 43, 160) solid;
+    font-family: 'Averta', monospace;
+    height: 2rem;
+}
+
+footer {
+    margin: 3rem;
+}
