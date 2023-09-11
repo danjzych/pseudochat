@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+import random
 
 db = SQLAlchemy()
 
@@ -19,6 +20,14 @@ class Message(db.Model):
         nullable=False,
         unique=True
     )
+
+    @classmethod
+    def get_random_message(cls):
+        """Returns a random message from the database."""
+
+        message_count =  Message.query.count()
+
+        return Message.query.get_or_404(random.randint(1, message_count))
 
 
 def connect_db(app):

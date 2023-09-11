@@ -15,5 +15,7 @@ m4 = Message(message='So, do you just want to chat all day? I do!')
 
 m5 = Message(message='I was built using Flask, SQLAlchemy, and jQuery.')
 
-db.session.add_all([m1, m2, m3, m4, m5])
+m6 = Message(message='One day soon, I''ll have something more interesting to say...')
+
+db.session.add_all([m1, m2, m3, m4, m5, m6])
 db.session.commit()

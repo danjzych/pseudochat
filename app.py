@@ -1,9 +1,9 @@
 import os
 
-from flask import Flask, request, redirect, render_template, session
+from flask import Flask, redirect, render_template, jsonify
 # from flask_debugtoolbar import DebugToolbarExtension
 
-from models import db, connect_db
+from models import db, connect_db, Message
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
@@ -17,3 +17,14 @@ connect_db(app)
 def show_homepage():
 
     return render_template('index.html')
+
+
+@app.get('/api/get-message')
+def get_message():
+    """Returns JSON for a random Psuedochat message."""
+
+    data = {
+        "message": Message.get_random_message().message
+    }
+
+    return jsonify(data)
