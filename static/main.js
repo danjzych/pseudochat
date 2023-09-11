@@ -47,11 +47,11 @@ $('document').ready(() => {
         //if user sends 'clear', clear messages. if user input is not blank or 'send another', append message to message-field container with signature
         if (userInput.toLowerCase() === 'clear') {
 
-            $('.message-field').empty();
-            $('.message-field').append('<p class="message bot">Messages cleared!</p>');
+            $('#message-field').empty();
+            $('#message-field').append('<p class="message bot">Messages cleared!</p>');
 
             setTimeout(() => {
-                $('.message-field').empty();
+                $('#message-field').empty();
             }, 600);
 
             $('input').val('Send another message!');
@@ -60,11 +60,11 @@ $('document').ready(() => {
 
             let userMessage = `<p class="message user">${userInput}</p>`;
 
-            $('.message-field').append(userMessage);
-            $('.message-field').append(`<p class="user-signature"><span class='user-name'>User</span>, ${dateAndTime}</p>`);
+            $('#message-field').append(userMessage);
+            $('#message-field').append(`<p class="user-signature"><span class='user-name'>User</span>, ${dateAndTime}</p>`);
 
             //always scroll to bottom
-            $('.message-field').scrollTop($('.message-field')[0].scrollHeight);
+            $('#message-field').scrollTop($('#message-field')[0].scrollHeight);
 
             $('input').val('Send another message!');
 
@@ -72,8 +72,8 @@ $('document').ready(() => {
             if (counter === 0) {
                 setTimeout(() => {
 
-                    $('.message-field').append('<p class="message bot">Hi I\'m PseudoBot, I don\'t have much to say yet. If at any time our messages get too long, just send me the word "clear".</p>');
-                    $('.message-field').append(`<p class="bot-signature"><span class='bot-name'>PseudoBot</span>, ${dateAndTime}</p>`);
+                    $('#message-field').append('<p class="message bot">Hi I\'m PseudoBot, I don\'t have much to say yet. If at any time our messages get too long, just send me the word "clear".</p>');
+                    $('#message-field').append(`<p class="bot-signature"><span class='bot-name'>PseudoBot</span>, ${dateAndTime}</p>`);
 
                     ++counter;
 
@@ -90,10 +90,10 @@ $('document').ready(() => {
 
                     let botMessage = `<p class="message bot">${randomMessage}</p>`;
 
-                    $('.message-field').append(botMessage);
-                    $('.message-field').append(`<p class="bot-signature"><span class='bot-name'>PseudoBot</span>, ${dateAndTime}</p>`);
+                    $('#message-field').append(botMessage);
+                    $('#message-field').append(`<p class="bot-signature"><span class='bot-name'>PseudoBot</span>, ${dateAndTime}</p>`);
 
-                    $('.message-field').scrollTop($('.message-field')[0].scrollHeight);
+                    $('#message-field').scrollTop($('#message-field')[0].scrollHeight);
                 }, 450);
             }
         };
