@@ -42,17 +42,26 @@ function clearMessages() {
 	$INPUT.val('Send another message!');
 }
 
+function addMessage(message, user) {
+	console.debug('addMessage');
+
+	$MESSAGE_FIELD.append(`<p class="message bot">${message}</p>`);
+	$MESSAGE_FIELD.append(`<p class="bot-signature"><span class='bot-name'>{user}</span>, ${getDateAndTime()}</p>`);
+
+}
+
+
 async function getMessage() {
 	console.debug('getMessage');
 
 	const PseudoMessage = await Message.getMessage();
 
 	setTimeout(() => {
-		$('#message-field').append(`<p class="message bot">${PseudoMessage.message}</p>`);
-		$('#message-field').append(`<p class="bot-signature"><span class='bot-name'>PseudoBot</span>, ${getDateAndTime()}</p>`);
+		$MESSAGE_FIELD.append(`<p class="message bot">${PseudoMessage.message}</p>`);
+		$MESSAGE_FIELD.append(`<p class="bot-signature"><span class='bot-name'>PseudoBot</span>, ${getDateAndTime()}</p>`);
 
-		$('#message-field').scrollTop($('#message-field')[0].scrollHeight);
-	}, 450);
+		$MESSAGE_FIELD.scrollTop($('#message-field')[0].scrollHeight);
+	}, 650);
 }
 
 /**
@@ -63,8 +72,8 @@ function handleChatSubmit(evt) {
 	evt.preventDefault()
 	const userMessage = $INPUT.val();
 
-    $MESSAGE_FIELD.append(`<p class="message user">${userMessage}</p>`);
-    $MESSAGE_FIELD.append(`<p class="user-signature"><span class='user-name'>User</span>, ${getDateAndTime()}</p>`);
+  $MESSAGE_FIELD.append(`<p class="message user">${userMessage}</p>`);
+  $MESSAGE_FIELD.append(`<p class="user-signature"><span class='user-name'>User</span>, ${getDateAndTime()}</p>`);
 
 	userMessage.toLowerCase() === 'clear' ? clearMessages() : getMessage();
 
