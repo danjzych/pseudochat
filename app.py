@@ -1,7 +1,6 @@
 import os
 
 from flask import Flask, redirect, render_template, jsonify
-# from flask_debugtoolbar import DebugToolbarExtension
 
 from models import db, connect_db, Message
 
